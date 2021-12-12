@@ -61,7 +61,7 @@ document.addEventListener('mousemove', function(e) {
     
   }
 
-
+  
   getClipboardContents().then(result => togglePetal(result));
 
   
