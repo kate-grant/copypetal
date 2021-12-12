@@ -1,0 +1,30 @@
+{
+    "name": "CopyPetal",
+    "icons": {
+      "16": "petalimg16.png"
+    },
+    "description": "Displays text content from the clipboard",
+    "permissions": ["scripting","clipboardRead", "tabs"],
+    "host_permissions": [
+      "https://*/*", "http://*/*"
+  ],
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+      "service_worker": "background.js"
+    },
+    "commands": {
+        "petal-script": {
+          "suggested_key": "Ctrl+Shift+L",
+          "description": "Toggle petal visibility on page"
+        }
+    },
+    "action": {},
+    "content_scripts": [
+      {
+        "matches": ["https://*/*"],
+        "run_at": "document_end",
+        "js": ["ct.js"]
+      }
+    ]
+  }
